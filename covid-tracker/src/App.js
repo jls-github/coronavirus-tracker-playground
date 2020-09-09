@@ -31,7 +31,15 @@ function App() {
           <li>Positive Antibody Tests (historical) - {data.positiveTestsAntibody ? data.positiveTestsAntibody : "N/A"}</li>
           <li>Positive Antigen Tests (historical) - {data.positiveTestsAntigen ? data.positiveTestsAntigen : "N/A"}</li>
           <li>Positive Viral Tests (historical) - {data.positiveTestsViral ? data.positiveTestsViral : "N/A"}</li>
-          
+          <li>Total Recovered (historical) - {data.recovered ? data.recovered : "N/A"}</li>
+          <li>Total Viral Test Encounters (?) (historical?) - {data.totalTestEncountersViral ? data.totalTestEncountersViral : "N/A"}</li>
+          <li>Total Test Results (historical) - {data.totalTestResults ? data.totalTestResults : "N/A"}</li>
+          <li>New Test Results - {data.totalTestResultsIncrease ? data.totalTestResultsIncrease : "N/A"}</li>
+          <li>Total Test Results Source - {data.totalTestResultsSource ? data.totalTestResultsSource : "N/A"}</li> 
+          {/* need to make test result source readable - expand out from posNeg, etc. */}
+          <li>Total Antibody Tests (historical) - {data.totalTestsAntibody ? data.totalTestsAntibody : "N/A"}</li>
+          <li>Total Antigen Tests (historical) - {data.totalTestsAntigen ? data.totalTestsAntigen : "N/A"}</li>
+
 
         </ul>
         </div>
