@@ -1,32 +1,41 @@
-import Chart from 'chart.js';
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
 
 const CovidChart = ({cases, tests}) => {
-
-    const chartRef = useRef(null)
 
     cases = cases ? cases : 7
     tests = tests ? tests : 5
 
-    useEffect(() => {
-        const chart = new Chart(chartRef.current, {
-            type: "bar",
-            data: {
-                labels: ['Cases', 'Tests'],
-                datasets: [{
-                    label: "Total",
-                    data: [cases, tests],
-                    backgroundColor: ["red", "green"],
-                    borderColor: ["black", "black"],
-                    borderWidth: 1
-                }]
-            }
-        })
-    }, [])
+    const labels = ["Cases", "Tests"]
+    const datasets = [{
+        label: "Total",
+        data: [7, 10],
+        backgroundColor: ["red", "green"]
+    }]
+
 
     return(
         <div>
-            <canvas ref={chartRef} id="myChart" width="400" height="400"></canvas>
+            <Bar 
+            data={{labels: labels, datasets: datasets}}
+            options={{
+                title:{
+                  display:true,
+                  text:'Cases versus tests',
+                  fontSize:20
+                },
+                legend:{
+                  display:true,
+                  position:'right'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+              }} />
         </div>
     )
 };
