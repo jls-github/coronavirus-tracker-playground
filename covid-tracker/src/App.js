@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import CovidChart from './components/CovidChart.js';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const populateJsonData = () => {
     return jsonData.map(data => {
       return <div>
+        <CovidChart />
         <h3>{data.state}</h3>
         <ul>
           <li>General Statistics
