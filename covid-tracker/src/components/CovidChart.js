@@ -1,7 +1,7 @@
 import Chart from 'chart.js';
 import React, {useRef} from 'react';
 
-const CovidChart = (cases, tests) => {
+const CovidChart = ({cases, tests}) => {
 
     const chartRef = useRef(null)
 
