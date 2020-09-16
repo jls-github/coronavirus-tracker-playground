@@ -1,9 +1,24 @@
 import Chart from 'chart.js';
 import React, {useRef} from 'react';
 
-const CovidChart = () => {
+const CovidChart = (cases, tests) => {
 
     const chartRef = useRef(null)
+
+    cases = cases ? cases : 7
+    tests = tests ? tests : 5
+
+    const chart = new Chart(chartRef, {
+        type: "bar",
+        data: {
+            labels: ['Cases', 'Tests'],
+            datasets: [{
+                label: "Total",
+                data: [cases, tests],
+                backgroundColor: ["red", "blue"]
+            }]
+        }
+    })
 
     return(
         <div>
