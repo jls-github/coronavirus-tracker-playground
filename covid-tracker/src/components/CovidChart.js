@@ -1,10 +1,13 @@
 import Chart from 'chart.js';
-import React from 'react';
+import React, {useRef} from 'react';
 
 const CovidChart = () => {
+
+    const chartRef = useRef(null)
+
     return(
         <div>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas ref={chartRef} id="myChart" width="400" height="400"></canvas>
         </div>
     )
 };
