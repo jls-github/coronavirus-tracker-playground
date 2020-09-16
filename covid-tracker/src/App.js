@@ -10,7 +10,7 @@ function App() {
   const populateJsonData = () => {
     return jsonData.map(data => {
       return <div>
-        <CovidChart />
+        <CovidChart cases={data.positive} tests={data.totalTestResults} />
         <h3>{data.state}</h3>
         <ul>
           <li>General Statistics

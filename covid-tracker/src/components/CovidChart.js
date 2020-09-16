@@ -9,7 +9,7 @@ const CovidChart = ({cases, tests}) => {
     const labels = ["Cases", "Tests"]
     const datasets = [{
         label: "Total",
-        data: [7, 10],
+        data: [cases, tests],
         backgroundColor: ["red", "green"]
     }]
 
